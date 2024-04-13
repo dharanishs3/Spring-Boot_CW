@@ -3,6 +3,7 @@ package com.example.day1_q5.model;
 
 public class Student {
     private String studentName;
+    
     private String message;
     public String getStudentName() {
         return studentName;
