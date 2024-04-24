@@ -1,4 +1,4 @@
-package com.example.dharanishq1.model;
+package com.example.dharanishq1.Model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

@@ -1,10 +1,10 @@
-package com.example.dharanishq1.controller;
+package com.example.dharanishq1.Controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.dharanishq1.model.DharanishModel;
-import com.example.dharanishq1.repository.DharanishRepo;
-import com.example.dharanishq1.service.DharanishService;
+import com.example.dharanishq1.Model.DharanishModel;
+import com.example.dharanishq1.Repository.DharanishRepo;
+import com.example.dharanishq1.Service.DharanishService;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,11 +18,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 public class DharanishController {
-    public DharanishModel productService;
-    public DharanishController(DharanishRepo productService)
-    {
-        this.productService = productService;
-    }
+    public DharanishService productService;
     @SuppressWarnings("null")
     @PostMapping("/api/product")
     public ResponseEntity<DharanishModel> postMethodName(@RequestBody DharanishModel product) {
@@ -47,7 +43,7 @@ public class DharanishController {
     @DeleteMapping("api/product/{productId}")
     public ResponseEntity<DharanishModel> delete(@PathVariable("productId") int id,@RequestBody DharanishModel product)
     {
-        if(productService.deleteProduct(id) == true)
+        if(productService.deleteProductData(id) == true)
         {
             return new ResponseEntity<>(product,HttpStatus.OK);
         }
